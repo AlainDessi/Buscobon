@@ -19,7 +19,7 @@ class Migration
   public function Migrate($file)
   {
       $sql = file_get_contents($file);
-      Config::GetDb()->exec($sql);
+      $instance = Config::GetDb()->db_open()->exec($sql);
   }
 
 } // end class

@@ -1,3 +1,5 @@
 config/user.config.php
-temp/cache/
-temp/logs/
+temp/cache/*
+temp/logs/*
+composer.lock
+vendor/

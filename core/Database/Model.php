@@ -37,8 +37,9 @@ class Model
 	/**
 	 * Récupére le nom de la table
 	 */
-	private static function GetTable() {
-		  return str_replace('App\Model\\', '', get_called_class());
+	private static function GetTable()
+  {
+		  return strtolower(str_replace('App\Model\\', '', get_called_class()));
 	}
 
 } // end of class

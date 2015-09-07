@@ -10,18 +10,17 @@ class SessionAuth extends Session
 
   public function __construct()
   {
-
-    if(!session_id()) {
-      session_start();
-    }
-
+      if(!session_id())
+      {
+          session_start();
+      }
   }
 
 
   public function setId($UserId)
   {
-    $this->put('Auth', 'id', $UserId);
-    return $this;
+      $this->put('Auth', 'id', $UserId);
+      return $this;
   }
 
   public function setEmail($Email)
@@ -52,11 +51,9 @@ class SessionAuth extends Session
 
   public function check()
   {
-
     if(!$this->hasLogged()) {
       redirect('login');
     }
-
   }
 
   public function logout()

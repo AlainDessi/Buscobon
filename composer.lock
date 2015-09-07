@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4544ddcdf7cc6da9d763a1a8e4c91861",
+    "hash": "d72b24f231f3da1464c0f854be7bd479",
     "packages": [
         {
             "name": "danielstjules/stringy",
@@ -185,7 +185,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.1.13",
+            "version": "v5.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -228,7 +228,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.1.13",
+            "version": "v5.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -270,7 +270,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v5.1.13",
+            "version": "v5.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -315,7 +315,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.1.13",
+            "version": "v5.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -365,16 +365,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.1.13",
+            "version": "v5.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "3026f4768894e640809b5a91703c57ed69a9d9d8"
+                "reference": "c5389968d48517b3b51cfd8cd4abd72f0cc1575b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/3026f4768894e640809b5a91703c57ed69a9d9d8",
-                "reference": "3026f4768894e640809b5a91703c57ed69a9d9d8",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/c5389968d48517b3b51cfd8cd4abd72f0cc1575b",
+                "reference": "c5389968d48517b3b51cfd8cd4abd72f0cc1575b",
                 "shasum": ""
             },
             "require": {
@@ -414,20 +414,20 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2015-08-29 21:35:29"
+            "time": "2015-09-03 15:47:41"
         },
         {
             "name": "illuminate/view",
-            "version": "v5.1.13",
+            "version": "v5.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
-                "reference": "7196e20f3ef3a5987e732f0297cc139282dac33c"
+                "reference": "82c5bc657554360a7325ace0761c24f26de9e771"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/view/zipball/7196e20f3ef3a5987e732f0297cc139282dac33c",
-                "reference": "7196e20f3ef3a5987e732f0297cc139282dac33c",
+                "url": "https://api.github.com/repos/illuminate/view/zipball/82c5bc657554360a7325ace0761c24f26de9e771",
+                "reference": "82c5bc657554360a7325ace0761c24f26de9e771",
                 "shasum": ""
             },
             "require": {
@@ -461,7 +461,7 @@
             ],
             "description": "The Illuminate View package.",
             "homepage": "http://laravel.com",
-            "time": "2015-09-01 09:11:48"
+            "time": "2015-09-04 12:45:07"
         },
         {
             "name": "philo/laravel-blade",
@@ -555,16 +555,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v5.2.10",
+            "version": "v5.2.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "07005ecbb80d11ec8c0f067bb37e8909cc7fcbb7"
+                "reference": "5dd754112d07ab7480824c2916689ce06f83a842"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/07005ecbb80d11ec8c0f067bb37e8909cc7fcbb7",
-                "reference": "07005ecbb80d11ec8c0f067bb37e8909cc7fcbb7",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/5dd754112d07ab7480824c2916689ce06f83a842",
+                "reference": "5dd754112d07ab7480824c2916689ce06f83a842",
                 "shasum": ""
             },
             "require": {
@@ -574,10 +574,15 @@
                 "phpdocumentor/phpdocumentor": "*",
                 "phpunit/phpunit": "4.3.*"
             },
+            "suggest": {
+                "league/oauth2-client": "Needed for Gmail's XOAUTH2 authentication system"
+            },
             "type": "library",
             "autoload": {
                 "classmap": [
                     "class.phpmailer.php",
+                    "class.phpmaileroauth.php",
+                    "class.oauth.php",
                     "class.smtp.php",
                     "class.pop3.php",
                     "extras/EasyPeasyICS.php",
@@ -606,7 +611,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2015-05-04 12:37:21"
+            "time": "2015-09-02 10:40:37"
         },
         {
             "name": "phpspec/prophecy",

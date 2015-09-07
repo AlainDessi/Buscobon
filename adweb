@@ -3,7 +3,11 @@
 /**
  * AUTOLOADER
  */
-require_once ( __DIR__ . '/vendor/autoload.php' );
+require_once (__DIR__ . '/vendor/autoload.php');
+
+define('CACHE_DIR' , __DIR__ . '/temp/cache/');
+define('CONFIG_DIR', __DIR__ . '/config/');
+
 use Core\Http\Router;
 
 $color = new Core\Console\Color();

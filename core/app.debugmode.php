@@ -34,4 +34,4 @@ set_error_handler('Error');
 register_shutdown_function('shutdownFunction');
 
 // Affichage des erreurs
-ini_set('display_errors', true);
+ini_set('display_errors', false);
