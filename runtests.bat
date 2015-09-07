@@ -1,0 +1,1 @@
+phpunit tests/HasherTest --bootstrap vendor/autoload.php

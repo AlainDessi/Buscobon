@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * AUTOLOADER
+ */
+require_once ( __DIR__ . '/vendor/autoload.php' );
+use Core\Http\Router;
+
+$color = new Core\Console\Color();
+
+$command = $argv[1];
+
+
+/**
+ * SEEDER
+ */
+if($command === 'seeder')
+{
+
+  if ( !empty($argv[2]) ) {
+    $class = 'Bdd\seeder\\'.$argv[2];
+  }
+  else {
+    echo $color->StrColor(" Error : use adweb seeder <filename>" , "red" ) . "\n";
+    exit();
+  }
+
+  $class::run();
+  echo $color->StrColor("Seeder - success", "green") . "\n";
+  exit();
+
+ }
+
+ /**
+  * ROUTES
+  */
+ elseif( $command === 'routes' )
+ {
+
+  $lencell       = 40;
+  $lencellmethod = 8;
+  $lencellalias  = 30;
+
+  $router = new Router();
+  require_once (__DIR__ . '/app/routes.php');
+
+  $cadrecell = '+' . str_repeat("-", $lencell ) . '+' . str_repeat("-", $lencellmethod ) . '+'  . str_repeat("-", $lencellalias ) . '+' . str_repeat("-", $lencell ) . '+' . "\n";
+
+
+  echo $cadrecell;
+  echo '| URL ' . str_repeat(" ", $lencell - 5) . '| METHOD ' . str_repeat(" ", $lencellmethod - 8) . '| ALIAS ' . str_repeat(" ", $lencellalias - 7) .'| CALL ' . str_repeat(" ", $lencell - 6) . '|'  . "\n";
+  echo $cadrecell;
+
+  foreach ($router->getRoutes() as $method => $routes) {
+
+    foreach ($routes as $route) {
+
+      echo '| ' . $route->getPath() . str_repeat(' ', $lencell - strlen($route->getPath()) -1 );
+      echo '| ' . $method . str_repeat(' ', $lencellmethod - strlen($method) -1 );
+      echo '| ' . $route->getAlias() . str_repeat( ' ', $lencellalias - strlen($route->getAlias())-1);
+      echo '| ' . $route->getCallable() . str_repeat(' ', $lencell - strlen($route->getCallable()) - 1 ) . '|' . "\n";
+
+    }
+
+  }
+
+  echo $cadrecell;
+
+  exit();
+
+ }
+
+/**
+ * MIGRATION
+ */
+elseif( $command === 'migrate' )
+{
+
+  if ( !empty($argv[2]) ) {
+    $file = $argv[2];
+  }
+  else {
+    echo $color->StrColor(" Error : use adweb migrate <filename>" , "red", "black") . "\n";
+    exit();
+  }
+
+  $file = __DIR__ . '/bdd/migration/' . $file . '.sql';
+
+  if ( file_exists($file) ) {
+    $migrate = new Core\Database\Migration();
+    $migrate->Migrate( $file );
+
+    echo $color->StrColor(" Success migrate Table : " . $argv[2] , "green") . "\n";
+    exit();
+  }
+  else {
+    echo $color->StrColor(" Error migration " . $argv[2] . " not found !" , "red") . "\n";
+    exit();
+  }
+} // end Migration
+
+/**
+ * ERROR - COMMAND NOT FOUND
+ */
+else {
+  echo $color->StrColor(" Command ERROR ! ", "white", "red") . "\n";
+  echo "command not found, type 'adweb help' for help";
+}
