@@ -4,6 +4,8 @@ Buscobon, ue petit frameWork que j'utilise dans mes projets personnel. Le develo
 
 Il utilise Bootstrap, PhpMailer, Blade, Composer, Grunt ...
 
-### Sommaire ###
+## Sommaire ##
 
 ## Installation ##
+
+## Mise à jour ##
