@@ -17,7 +17,7 @@ class AuthController extends \Core\Http\Controller {
    */
 	public function getLogin()
   {
-    return View('auth.login');
+    return View('admin.auth.login');
 	}
 
   /**
@@ -26,34 +26,33 @@ class AuthController extends \Core\Http\Controller {
   public function getLogout()
   {
     Auth::logout();
-    return redirect('admin.post');
+    return redirect('homepage');
   }
 
   public function checkLogin()
   {
-    $post = Request::post();
+      $post = Request::post();
 
-    $user = Users::where('email','=',$post['email'])->first();
+      $user = Users::where('email','=',$post['email'])->first();
 
-    if($user) {
-      if(Hash::Check($post['password'], $user->password)) {
-        $this->logUser($user);
-        exit();
+      if($user) {
+        if(Hash::Check($post['password'], $user->password)) {
+          $this->logUser($user);
+          exit();
+        }
       }
-    }
-    Session::danger('Mot de passe ou Email incorrect');
-    return redirect('login');
+
+      Session::danger('Mot de passe ou Email incorrect');
+      return redirect('login');
   }
 
   public function logUser($user)
   {
+      // enregistrement Session
+      Auth::setId($user->id)->setEmail($user->email);
 
-    // enregistrement Session
-    Auth::setId($user->id)->setEmail($user->email);
-
-    // redirect here
-    return redirect('admin.homepage');
-
+      // redirect here
+      return redirect('admin.homepage');
   }
 
 } // end class

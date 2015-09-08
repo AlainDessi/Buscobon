@@ -9,7 +9,7 @@
  *
  */
 ?>
-@extends('sample/default')
+@extends('front/default')
 
 @section('content')
 
