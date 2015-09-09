@@ -8,9 +8,9 @@ return array(
                     ['Homepage', 'fa fa-home', 'admin.homepage', '10',null],
                     ['Gestion du site', 'fa fa-database', '', '10',
                       [
-                        ['Menu 1', 'fa-home', 'admin.homepage', '10', null],
-                        ['Menu 2', 'fa-home', 'admin.homepage', '10', null],
-                        ['Menu 3', 'fa-home', 'admin.homepage', '10', null]
+                        ['Menu 1', 'fa fa-cog', 'admin.homepage', '10', null],
+                        ['Menu 2', 'fa fa-cog', 'admin.homepage', '10', null],
+                        ['Menu 3', 'fa fa-cog', 'admin.homepage', '10', null]
                       ]
                     ],
                     ['Configuration', 'fa fa-cogs', '', '900',

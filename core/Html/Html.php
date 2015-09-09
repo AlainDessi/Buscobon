@@ -64,7 +64,7 @@ class Html {
     return $this->attributes[$type];
   }
 
-  public function renderAttributes()
+  protected function renderAttributes()
   {
 
     $attributes = '';
