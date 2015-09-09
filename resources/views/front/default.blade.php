@@ -4,6 +4,7 @@
   <title><?= $title ?></title>
   <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
   <style>
+
     html,body {
       margin: 0;
       padding: 0;
@@ -21,6 +22,7 @@
       margin: 0 auto;
       height: 100%;
       text-align: center;
+      position: relative;
     }
     .box {
       display: table;
@@ -32,6 +34,14 @@
       height: 100%;
       vertical-align: middle;
     }
+    .version {
+      display: block;
+      position: absolute;
+      bottom: 36px;
+      width: 100%;
+      text-align: center;
+    }
+
   </style>
 </head>
 <body>
