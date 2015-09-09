@@ -45,7 +45,7 @@
         <td>{!! Table::IcoCheck($user->active) !!}</td>
         <td>
           {!! Button::btnIco('Modifier','edit', route('admin.users.edit', $user->id))->extra_small() !!}
-          {!! Button::btnIco('Effacer','delete', route('admin.users.delete', $user->id))->extra_small() !!}
+          {!! Button::btnDelete('Effacer', route('admin.users.delete', $user->id))->extra_small() !!}
         </td>
       </tr>
     @endforeach

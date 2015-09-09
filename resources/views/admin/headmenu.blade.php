@@ -11,19 +11,10 @@
       <a class="navbar-brand" href="#">Buscobon</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      {!! Menu::get('menuleft') !!}
-      {{-- <ul class="nav navbar-nav">
-        <li><a href="{{route('admin.homepage')}}">Dashboard</a></li>
+      {!! Menu::get('menuleft')->addClass('head-menu') !!}
+      <ul id="user-menu" class="nav navbar-nav navbar-right">
         <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"expanded="false">Configuration du site <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{route('admin.users')}}">Utilisateurs</a></li>
-          </ul>
-        </li>
-      </ul> --}}
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"expanded="false">UserName <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"expanded="false"><i class="fa fa-user"></i> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Préferences</a></li>
             <li role="separator" class="divider"></li>
