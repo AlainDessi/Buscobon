@@ -21,9 +21,9 @@ function deleteitem(url)
       title : 'Confirmation de suppression',
       text  : 'voulez vous vraiment supprimer cet élement ?',
       callback: function(result){
-
-          if(!result) {
-             // document.location.href = url;
+          if(result)
+          {
+              document.location.href = url;
           }
       }
     });

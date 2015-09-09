@@ -2,6 +2,7 @@
 
 namespace Core\Database;
 
+use Core\Exceptions\DatabaseException;
 use Core\Config;
 
 class QueryBuilder
@@ -310,15 +311,23 @@ class QueryBuilder
           }
       }
 
-      // soit plusieurs conditions soit l'id seulement
-      if(is_array($id))
+      if(!empty($fields))
       {
-          return Config::GetDb()->db_update( $id, $fields, $this->table );
+          // soit plusieurs conditions soit l'id seulement
+          if(is_array($id))
+          {
+              return Config::GetDb()->db_update( $id, $fields, $this->table );
+          }
+          else
+          {
+              return Config::GetDb()->db_update( [ 'id' => $id ], $fields, $this->table );
+          }
       }
       else
       {
-          return Config::GetDb()->db_update( [ 'id' => $id ], $fields, $this->table );
+          throw new DatabaseException("Aucun champs à mettre à jour, vérifier les champs fillable dans le Model");
       }
+
   }
 
 

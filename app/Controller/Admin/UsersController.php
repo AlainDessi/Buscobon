@@ -28,7 +28,7 @@ class UsersController extends \Core\Http\Controller {
    */
 	public function index()
   {
-    $users = Users::get();
+    $users = Users::where('trash', '=', '0')->get();
     return View('admin.users.list', compact('users'));
 	}
 
@@ -109,6 +109,7 @@ class UsersController extends \Core\Http\Controller {
 
       // test si email déjà existant
       $user = Users::where('email', '=', $post['email'])->first();
+
       if(!$user)
       {
           $user_id = Users::insert($post);
@@ -119,7 +120,7 @@ class UsersController extends \Core\Http\Controller {
           Session::danger('Email déjà existant, veuillez saisir un autre email');
           redirect('admin.users.create');
       }
-      throw new \Exception("Erreur inconnue lors de création d'un utilisateur");
+
     }
 
   /**
@@ -127,9 +128,20 @@ class UsersController extends \Core\Http\Controller {
    *
    * @param  int $user_id
    */
-	public function delete($user_id)
+	public function delete($id)
   {
-      //
+      $req = Users::update(['trash' => '1', 'active' => '0'], $id);
+
+      if(!$req)
+      {
+          Session::danger('Erreur lors de la suppression de l\'ultilisateur');
+      }
+      else
+      {
+          Session::success('Utilisateur supprimé');
+      }
+
+      return redirect('admin.users');
 	}
 
 } // end of class
