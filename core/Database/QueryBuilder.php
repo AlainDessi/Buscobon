@@ -285,6 +285,9 @@ class QueryBuilder
    */
   public function insert( $data )
   {
+      // Ajout automatique de la date de modification
+      $data['created_at'] = date('Y-m-d H:i:s');
+      // verification des champs modifiable
       foreach ($data as $key => $value) {
         if( !in_array($key,$this->fillable) ) {
           unset($data[$key]);
@@ -302,6 +305,8 @@ class QueryBuilder
  */
   public function update($fields, $id)
     {
+      // Ajout automatique de la date de modification
+      $fields['modified_at'] = date('Y-m-d H:i:s');
       // verification des champs modifiable
       foreach ($fields as $key => $value)
       {
@@ -327,7 +332,6 @@ class QueryBuilder
       {
           throw new DatabaseException("Aucun champs à mettre à jour, vérifier les champs fillable dans le Model");
       }
-
   }
 
 
