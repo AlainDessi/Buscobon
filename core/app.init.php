@@ -18,6 +18,9 @@ define( 'VIEWS_DIR'	, ROOT_DIR . '/resources/views/' );
 define( 'CACHE_DIR' , ROOT_DIR . '/temp/cache/' );
 define( 'CONFIG_DIR', ROOT_DIR . '/config/');
 
+// Set Time Zone
+date_default_timezone_set('Europe/Paris');
+
 // Functions de l'application
 require_once (__DIR__ . '/app.functions.php');
 
