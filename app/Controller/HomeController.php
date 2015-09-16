@@ -12,7 +12,7 @@ class HomeController extends \Core\Http\Controller {
 	public function index() {
 
     $title = "Buscobon - Php Framework by Alain DESSI";
-    return View('sample.homepage',compact('title'));
+    return View('front.homepage',compact('title'));
 
 	}
 

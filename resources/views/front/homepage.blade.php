@@ -9,7 +9,7 @@
  *
  */
 ?>
-@extends('sample/default')
+@extends('front/default')
 
 @section('content')
 
@@ -20,6 +20,7 @@
         <p>PHP FRAMEWORK By Alain Dessi</p>
       </div>
     </div>
+    <div class="version">Version {{ VERSION }}</div>
   </div>
 
 @endsection

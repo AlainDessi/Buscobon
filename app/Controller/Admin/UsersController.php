@@ -28,7 +28,7 @@ class UsersController extends \Core\Http\Controller {
    */
 	public function index()
   {
-    $users = Users::get();
+    $users = Users::where('trash', '=', '0')->get();
     return View('admin.users.list', compact('users'));
 	}
 
@@ -52,7 +52,6 @@ class UsersController extends \Core\Http\Controller {
    */
   public function update($id)
   {
-
       $post = Request::Post();
 
       if(!isset($post['active'])) {
@@ -60,31 +59,38 @@ class UsersController extends \Core\Http\Controller {
       }
 
       /* vérification mot de passe */
-      if(!empty($post['password_1'])) {
-
-        if( $post['password_1'] === $post['password_2']) {
-          $post['password'] = Hash::Encrypt($post['password_1']);
-        }
-        else {
-          Session::danger('Mot de passe ou Email incorrect');
-          return redirect('admin.users.edit', $id);
-          exit();
-        }
+      if(!empty($post['password_1']))
+      {
+          if( $post['password_1'] === $post['password_2'])
+          {
+              $post['password'] = Hash::Encrypt($post['password_1']);
+          }
+          else
+          {
+              Session::danger('Mot de passe ou Email incorrect');
+              return redirect('admin.users.edit', $id);
+              exit();
+          }
       }
 
+      // update enregistrement
       $req = Users::update($post,$id);
 
-      if($req) {
-        Session::success('Enregistrement de l\'utilisateur réussi');
+      if($req)
+      {
+          Session::success('Enregistrement de l\'utilisateur réussi');
       }
-      else {
-        Session::danger('Une erreur est survenu lors de la sauvegarde');
+      else
+      {
+          Session::danger('Une erreur est survenu lors de la sauvegarde');
       }
+
       return redirect('admin.users.edit', $id);
   }
 
   /**
-   * Création d'un utilisateur
+   * Formulaire de Création d'un utilisateur
+   *
    */
   public function create()
   {
@@ -93,36 +99,49 @@ class UsersController extends \Core\Http\Controller {
       return View('admin.users.create', compact('rights'));
   }
 
-    public function store()
-    {
-        $post = Request::post();
+  /**
+   * Création d'un utilisateur
+   *
+   */
+  public function store()
+  {
+      $post = Request::post();
 
-        // test si email déjà existant
-        $user = Users::where('email', '=', $post['email'])->first();
-        if(!$user)
-        {
-            $user_id = Users::insert($post);
-            redirect('admin.users.edit', $user_id);
-        }
-        else
-        {
-            Session::danger('Email déjà existant, veuillez saisir un autre email');
-            redirect('admin.users.create');
-        }
+      // test si email déjà existant
+      $user = Users::where('email', '=', $post['email'])->first();
 
-        throw new \Exception("Erreur inconnue");
+      if(!$user)
+      {
+          $user_id = Users::insert($post);
+          redirect('admin.users.edit', $user_id);
+      }
+      else
+      {
+          Session::danger('Email déjà existant, veuillez saisir un autre email');
+          redirect('admin.users.create');
+      }
+
     }
 
-	public function delete( $user_id ) {
+  /**
+   * Suppression d'un utilisateur
+   *
+   * @param  int $user_id
+   */
+	public function delete($id)
+  {
+      $req = Users::update(['trash' => '1', 'active' => '0'], $id);
 
-		$condition = array( 'user_id' => $user_id );
+      if(!$req)
+      {
+          Session::danger('Erreur lors de la suppression de l\'ultilisateur');
+      }
+      else
+      {
+          Session::success('Utilisateur supprimé');
+      }
 
-		$return = \dbtable\users::DelLine( $condition );
-
-		header('Location: ' . ROOT_URL . '/admin/users' );
-
+      return redirect('admin.users');
 	}
-
-
 
 } // end of class

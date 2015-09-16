@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Routes de l'application
  *
@@ -11,20 +10,28 @@
  * @link      	http://www.alain-dessi.com
  */
 
-// Routes du front-end
+/*
+|--------------------------------------------------------------------------
+| Routes du front-end
+|--------------------------------------------------------------------------
+*/
+// homepage front
 $router->get( '/', 'HomeController@index', 'homepage' );
 
-// Routes de l'Administration
+
+/*
+|--------------------------------------------------------------------------
+| Routes de l'Administration
+|--------------------------------------------------------------------------
+*/
+
+// homepage
 $router->get( '/admin', 'Admin\HomeController@index', 'admin.homepage' );
 
-// Utilsateurs
+// Utilisateurs
 $router->resource('/admin/users', 'Admin\UsersController');
-
 
 // authentification
 $router->get( '/auth/login', 'Auth\AuthController@getLogin', 'login' );
 $router->get( '/auth/logout', 'Auth\AuthController@getLogout', 'logout' );
 $router->post( '/auth/login', 'Auth\AuthController@CheckLogin', 'checklogin' );
-
-// exemple resources
-$router->resource('/admin/post', 'PostController');

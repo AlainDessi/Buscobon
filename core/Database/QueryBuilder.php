@@ -2,6 +2,7 @@
 
 namespace Core\Database;
 
+use Core\Exceptions\DatabaseException;
 use Core\Config;
 
 class QueryBuilder
@@ -284,6 +285,9 @@ class QueryBuilder
    */
   public function insert( $data )
   {
+      // Ajout automatique de la date de modification
+      $data['created_at'] = date('Y-m-d H:i:s');
+      // verification des champs modifiable
       foreach ($data as $key => $value) {
         if( !in_array($key,$this->fillable) ) {
           unset($data[$key]);
@@ -301,6 +305,8 @@ class QueryBuilder
  */
   public function update($fields, $id)
     {
+      // Ajout automatique de la date de modification
+      $fields['modified_at'] = date('Y-m-d H:i:s');
       // verification des champs modifiable
       foreach ($fields as $key => $value)
       {
@@ -310,14 +316,21 @@ class QueryBuilder
           }
       }
 
-      // soit plusieurs conditions soit l'id seulement
-      if(is_array($id))
+      if(!empty($fields))
       {
-          return Config::GetDb()->db_update( $id, $fields, $this->table );
+          // soit plusieurs conditions soit l'id seulement
+          if(is_array($id))
+          {
+              return Config::GetDb()->db_update( $id, $fields, $this->table );
+          }
+          else
+          {
+              return Config::GetDb()->db_update( [ 'id' => $id ], $fields, $this->table );
+          }
       }
       else
       {
-          return Config::GetDb()->db_update( [ 'id' => $id ], $fields, $this->table );
+          throw new DatabaseException("Aucun champs à mettre à jour, vérifier les champs fillable dans le Model");
       }
   }
 

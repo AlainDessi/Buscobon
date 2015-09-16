@@ -1,6 +1,6 @@
 html, body { height: 100%; margin: 0; padding: 0; }
 
-body { font-family: Roboto; font-size: 13px; background-color: #EDECEC; padding-top: 80px; }
+body { font-family: Roboto; font-size: 13px; background-color: #F0F0F0; padding-top: 80px; }
 
 .full-height { height: 100%; }
 
@@ -21,6 +21,7 @@ display: block;
 margin: 0 auto;
 box-shadow: 1px 1px 4px rgba(0,0,0,0.35);
 padding: 16px;
+background-color: #fff;
 }
 
 hr { border-color: #4285F4; opacity: 0.25; }
@@ -65,9 +66,14 @@ hr { border-color: #4285F4; opacity: 0.25; }
   transition: all 200ms ease 0s;
   -moz-user-select: none;
   border: none;
+  border-radius: 0;
 }
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand { color: #fff; }
-
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand { color: #FFF; }
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #D0D0D0;
+    background-color: transparent;
+}
+#user-menu.navbar-nav > li > a { font-size: 24px; }
 
 /* -----------------------------------------
  | Homepage

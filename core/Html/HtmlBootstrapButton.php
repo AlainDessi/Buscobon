@@ -93,4 +93,21 @@ class HtmlBootstrapButton extends Html {
     return $this;
   }
 
+  public function btnDelete($label, $url)
+  {
+    if(!empty($label))
+    {
+      $label = '&nbsp;' . $label;
+    }
+
+    $this->closetag = '><i class="' . $this->icons['delete'][0] . '"></i>' . $label . '</a>';
+
+    $this->setAttribute('class', 'btn btn-' . $this->icons['delete'][1]);
+    $this->setAttribute('href', 'javascript:deleteitem(\'' . $url .'\')');
+
+    $this->tag = 'a';
+
+    return $this;
+  }
+
 } // endclass
