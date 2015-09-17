@@ -27,5 +27,5 @@ require_once (__DIR__ . '/app.functions.php');
 // Debug
 require_once(__DIR__ . '/app.debugmode.php');
 
-// routes
-require_once(__DIR__ . '/app.initrouter.php');
+// chargement des routes de l'application
+require_once (dirname(__DIR__) . '/app/routes.php');
