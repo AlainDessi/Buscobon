@@ -51,16 +51,22 @@ class Router
       {
           $url = $_GET['url'];
       }
-      else {
+      else
+      {
           $url = '';
       }
 
-  		if ( !empty( $url) || !is_null( $url ) ) {
-  			$this->url = $url;
-  			$this->url_method = $_SERVER['REQUEST_METHOD'];
+  		if ( !empty( $url) || !is_null( $url ) )
+      {
+    			$this->url = $url;
+          if(isset($_SERVER['REQUEST_METHOD']))
+          {
+              $this->url_method = $_SERVER['REQUEST_METHOD'];
+          }
   		}
-  		else {
-  			return false;
+  		else
+      {
+  			 return false;
   		}
 	} // end __construct
 

@@ -14,7 +14,6 @@ $color = new Core\Console\Color();
 
 $command = $argv[1];
 
-
 /**
  * SEEDER
  */
@@ -45,17 +44,16 @@ if($command === 'seeder')
   $lencellmethod = 8;
   $lencellalias  = 30;
 
-  $router = new Router();
+  // récupération des routes de l'application
   require_once (__DIR__ . '/app/routes.php');
 
   $cadrecell = '+' . str_repeat("-", $lencell ) . '+' . str_repeat("-", $lencellmethod ) . '+'  . str_repeat("-", $lencellalias ) . '+' . str_repeat("-", $lencell ) . '+' . "\n";
-
 
   echo $cadrecell;
   echo '| URL ' . str_repeat(" ", $lencell - 5) . '| METHOD ' . str_repeat(" ", $lencellmethod - 8) . '| ALIAS ' . str_repeat(" ", $lencellalias - 7) .'| CALL ' . str_repeat(" ", $lencell - 6) . '|'  . "\n";
   echo $cadrecell;
 
-  foreach ($router->getRoutes() as $method => $routes) {
+  foreach (Routes::getRoutes() as $method => $routes) {
 
     foreach ($routes as $route) {
 
