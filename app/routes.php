@@ -16,7 +16,7 @@
 |--------------------------------------------------------------------------
 */
 // homepage front
-$router->get( '/', 'HomeController@index', 'homepage' );
+Routes::get( '/', 'HomeController@index', 'homepage' );
 
 
 /*
@@ -24,14 +24,13 @@ $router->get( '/', 'HomeController@index', 'homepage' );
 | Routes de l'Administration
 |--------------------------------------------------------------------------
 */
-
 // homepage
-$router->get( '/admin', 'Admin\HomeController@index', 'admin.homepage' );
+Routes::get( '/admin', 'Admin\HomeController@index', 'admin.homepage' );
 
 // Utilisateurs
-$router->resource('/admin/users', 'Admin\UsersController');
+Routes::resource('/admin/users', 'Admin\UsersController');
 
 // authentification
-$router->get( '/auth/login', 'Auth\AuthController@getLogin', 'login' );
-$router->get( '/auth/logout', 'Auth\AuthController@getLogout', 'logout' );
-$router->post( '/auth/login', 'Auth\AuthController@CheckLogin', 'checklogin' );
+Routes::get( '/auth/login', 'Auth\AuthController@getLogin', 'login' );
+Routes::get( '/auth/logout', 'Auth\AuthController@getLogout', 'logout' );
+Routes::post( '/auth/login', 'Auth\AuthController@CheckLogin', 'checklogin' );

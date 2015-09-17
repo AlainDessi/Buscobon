@@ -32,22 +32,19 @@ function debug( $var )
  */
 function route( $alias, $arguments = null )
 {
-  $router = new Core\Http\Router();
-  include(dirname(__DIR__) . '/app/routes.php');
+    $url = '/' . Routes::getUrlAlias($alias);
 
-  $url = '/' . $router->getUrlAlias($alias);
+    if( gettype($arguments) === 'string' ) {
+      $url .= '/' . $arguments;
+    }
+    elseif(gettype($arguments) === 'array')
+    {
+      $url .= '/' . implode('/',$arguments);
+    }
 
-  if( gettype($arguments) === 'string' ) {
-    $url .= '/' . $arguments;
-  }
-  elseif(gettype($arguments) === 'array')
-  {
-    $url .= '/' . implode('/',$arguments);
-  }
+    $url = str_replace('//', '/', $url);
 
-  $url = str_replace('//', '/', $url);
-
-  return $url;
+    return $url;
 }
 
   function View($alias, $args=null)

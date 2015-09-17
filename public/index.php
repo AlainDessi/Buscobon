@@ -31,4 +31,4 @@
   | execution des routes de l'application
   |--------------------------------------------------------------------------
   */
-	$router->run();
+	Routes::run();
