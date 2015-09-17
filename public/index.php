@@ -14,17 +14,17 @@
 
   /*
   |--------------------------------------------------------------------------
-  | Composer Auto Loader
+  | Auto Loader
   |--------------------------------------------------------------------------
   */
-  require( dirname(__DIR__) . '/vendor/autoload.php');
+  require(dirname(__DIR__) . '/boot/autoload.php');
 
   /*
   |--------------------------------------------------------------------------
   | chargement du fichier principal d'initialisation de l'application
   |--------------------------------------------------------------------------
   */
-  require( dirname(__DIR__) . '/core/app.init.php');
+  require(dirname(__DIR__) . '/vendor/alaindessi/adweb/app.init.php');
 
   /*
   |--------------------------------------------------------------------------
