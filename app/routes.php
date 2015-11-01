@@ -18,7 +18,6 @@
 // homepage front
 Routes::get( '/', 'HomeController@index', 'homepage' );
 
-
 /*
 |--------------------------------------------------------------------------
 | Routes de l'Administration
