@@ -16,7 +16,10 @@ class UsersTableSeeder
   public static function run()
   {
 
-    Users::insert( [ 'email' => 'alain.dessi@laposte.net', 'password' => Hash::Encrypt('12345'), 'rightvalue' => '999'] );
+    Users::insert([ 'email' => 'alain.dessi@laposte.net',
+                    'password' => Hash::Encrypt('12345'),
+                    'rightvalue' => '999',
+                    'active' => true ]);
 
   }
 
