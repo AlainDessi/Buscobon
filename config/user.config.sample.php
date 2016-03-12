@@ -1,17 +1,15 @@
 <?php
 /**
- * BUSCOBON
- * PHP FrameWork by Alain Dessi
+ * Fichier de configuration principal de l'application
  *
- * Ficher de configuration utilisateur
- *
+ * @category   Configuration file
+ * @package    Buscobon - PHP FrameWork by Alain Dessi
  * @author     DESSI Alain <alain.dessi@laposte.net>
- * @copyright  2015 Dessi Alain
+ * @copyright  2016 Dessi Alain
  * @link       http://www.alain-dessi.com
  */
 
 return array(
-
   // Configuration Base de données MySql
   'db_host'       =>  'localhost',
   'db_name'       =>  'buscobon',
@@ -30,5 +28,4 @@ return array(
   'SMTPSecure'    => '',
   'Port'          => 1025,
   'CharSet'       => 'UTF-8'
-
 );
