@@ -12,14 +12,6 @@
 
 /*
 |--------------------------------------------------------------------------
-| Routes du front-end
-|--------------------------------------------------------------------------
-*/
-// homepage front
-Routes::get( '/', 'HomeController@index', 'homepage' );
-
-/*
-|--------------------------------------------------------------------------
 | Routes de l'Administration
 |--------------------------------------------------------------------------
 */
@@ -33,3 +25,15 @@ Routes::resource('/admin/users', 'Admin\UsersController');
 Routes::get( '/auth/login', 'Auth\AuthController@getLogin', 'login' );
 Routes::get( '/auth/logout', 'Auth\AuthController@getLogout', 'logout' );
 Routes::post( '/auth/login', 'Auth\AuthController@CheckLogin', 'checklogin' );
+
+/*
+|--------------------------------------------------------------------------
+| Routes du front-end
+|--------------------------------------------------------------------------
+*/
+// homepage front
+Routes::get('/', 'Front\HomeController@index', 'homepage');
+Routes::get('/:flag', 'Front\HomeController@index', 'homepage');
+
+// Exemple pour la gestion des langues
+Routes::get('/:flag/page/:slug', 'Front\HomeController@flagtest', 'flag');
