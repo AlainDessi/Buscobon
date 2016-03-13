@@ -28,3 +28,9 @@ $ npm update
 le fichier principal de configuration de l'application se trouve dans le répertoire ***config***
 
 Dupliquer le fichier ***config\user.config.sample.php*** en ***user.config.php***
+
+## Avant de passer en Production ##
+Executer
+```
+$ grunt build
+```

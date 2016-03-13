@@ -17,12 +17,12 @@
   {{-- font-awesome --}}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-  {{-- Theme Buscobon --}}
-  <link rel="stylesheet" type="text/css" href="/css/buscobon.admin.css">
-
-  {{-- Theme Jquery.modal --}}
-  <link rel="stylesheet" type="text/css" href="/css/jquery.modal.css">
-
+   @if(\Core\Config::get('dev'))
+      <link rel="stylesheet" type="text/css" href="/css/admin.theme.css">
+      <link rel="stylesheet" type="text/css" href="/css/jquery.modal.css">
+  @else
+      <link rel="stylesheet" type="text/css" href="/css/admin.theme.min.css">
+  @endif
 </head>
 <body>
   {{-- Header Menu --}}
@@ -38,12 +38,17 @@
   {{-- Contenu de la page- --}}
   @yield('main_content')
 
-  {{-- Loading Javascript --}}
+  {{-- Loading Javascript CDN --}}
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-  {{-- Jquery Modal --}}
-  <script type="text/javascript" src="/js/jquery.modal.js"></script>
-  {{-- Buscobon utils js --}}
-  <script type="text/javascript" src="/js/admin.functions.js"></script>
+
+  {{-- Developpement Mode --}}
+  @if(\Core\Config::get('dev'))
+    <script type="text/javascript" src="/js/jquery.modal.js"></script>
+    <script type="text/javascript" src="/js/admin.functions.js"></script>
+  {{-- Production Mode --}}
+  @else
+    <script type="text/javascript" src="/js/admin.functions.min.js"></script>
+  @endif
 </body>
 </html>

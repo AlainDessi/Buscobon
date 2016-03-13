@@ -7,7 +7,6 @@
  *
  */
 
-
 /**
  * Demande de confirmation de suppression
  * Utilise CreativeDream/jquery.modal - https://github.com/CreativeDream/jquery.modal
