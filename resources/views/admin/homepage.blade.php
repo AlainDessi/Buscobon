@@ -6,6 +6,7 @@
 
 @section('main_content')
 <div class="container">
-<h1>Bienvenue sur Buscobon</h1>
+  <h1>Bienvenue sur Buscobon</h1>
+  <hr>
 </div>
 @endsection

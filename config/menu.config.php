@@ -19,7 +19,7 @@
 return array(
 
     'menuleft' => [
-                    ['Homepage', 'fa fa-home', 'admin.homepage', '10',null],
+                    ['Tableau de Bord', 'fa fa-dashboard', 'admin.homepage', '10',null],
                     ['Gestion du site', 'fa fa-database', '', '10',
                       [
                         ['Menu 1', 'fa fa-cog', 'admin.homepage', '10', null],

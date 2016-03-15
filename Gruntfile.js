@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     // watch
   	watch: {
   		scripts: {
-  			files: ['public/css/front.theme.css', 'public/css/front.theme.scss', 'public/js/main.js'],
+  			files: ['public/css/front.theme.css', 'public/css/dev/front.theme.scss', 'public/css/dev/admin.theme.scss', 'public/js/main.js'],
   			tasks: ['sass', 'cssmin', 'uglify'],
   			options: {
   				spawn: false,

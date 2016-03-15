@@ -7,10 +7,22 @@
  * @copyright   2016 Dessi Alain
  * @link        http://www.alain-dessi.com
  */
+@import "_mixins";
+@import "admin.colors";
 
-html, body { height: 100%; margin: 0; padding: 0; }
 
-body { font-family: Roboto; font-size: 13px; background-color: #F0F0F0; padding-top: 80px; }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  background-color: $background-page-color;
+  padding-top: 80px;
+}
 
 .full-height { height: 100%; }
 
@@ -26,15 +38,18 @@ body { font-family: Roboto; font-size: 13px; background-color: #F0F0F0; padding-
 }
 
 .login {
-width: 50%;
-display: block;
-margin: 0 auto;
-box-shadow: 1px 1px 4px rgba(0,0,0,0.35);
-padding: 16px;
-background-color: #fff;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.35);
+  padding: 16px;
+  background-color: #fff;
 }
 
-hr { border-color: #4285F4; opacity: 0.25; }
+hr {
+  border-color: $hr-color;
+  opacity: 0.25;
+}
 
 /* -----------------------------------------
  | BUTTON
@@ -63,27 +78,48 @@ hr { border-color: #4285F4; opacity: 0.25; }
  *------------------------------------------- */
 
 .navbar-default {
-  background: #4285F4 none repeat scroll 0% 0%;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-  height: 65px;
   position: fixed;
-  z-index: 11;
+  background: $navbar-background none repeat scroll 0% 0%;
+  top: 0;
+  left: 0;
   width: 100%;
-  left: 0px;
   padding-right: 10px;
   padding-top: 6px;
-  top: 0px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 11;
   transition: all 200ms ease 0s;
   -moz-user-select: none;
   border: none;
   border-radius: 0;
+  .navbar-header {
+    .navbar-brand {
+      color: $navbar-brand-color;
+    }
+  }
+  .navbar-nav {
+    li {
+      a, a:focus, a:visited, .open>a, .open>a:focus {
+        color: $navbar-link-color;
+        &:hover {
+          color: $navbar-link-color-hover;
+          background-color: #222;
+        }
+      }
+    }
+  }
+  .dropdown-menu {
+    li {
+      a, a:focus, a:visited {
+        color: #222;
+        &:hover {
+          color: #222;
+          background-color: #D0D0D0;
+        }
+      }
+    }
+  }
 }
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand { color: #FFF; }
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
-    color: #D0D0D0;
-    background-color: transparent;
-}
-#user-menu.navbar-nav > li > a { font-size: 24px; }
+
 
 /* -----------------------------------------
  | Homepage

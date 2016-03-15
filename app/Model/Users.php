@@ -16,4 +16,10 @@ class Users extends \Core\Database\Model
                             'rightvalue',
                             'trash' ];
 
+    public static function getUserName($userId)
+    {
+        $user = self::find($userId);
+        return $user->firstname . ' ' . $user->lastname;
+    }
+
 } // end of class

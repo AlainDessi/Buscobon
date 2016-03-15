@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Fichier de style de l'administration
  *
@@ -7,6 +8,25 @@
  * @copyright   2016 Dessi Alain
  * @link        http://www.alain-dessi.com
  */
+/**
+ * Liste des Couleurs utilisé pour le back-end
+ *
+ * @category    StyleSheet
+ * @package     Buscobon
+ * @author      DESSI Alain <contact@alain-dessi.com>
+ * @copyright   2016 Dessi Alain
+ * @link        http://www.alain-dessi.com
+ */
+/*
+|--------------------------------------------------------------------------
+| Colors HTML
+|--------------------------------------------------------------------------
+*/
+/*
+|--------------------------------------------------------------------------
+| Navbar color
+|--------------------------------------------------------------------------
+*/
 html, body {
   height: 100%;
   margin: 0;
@@ -14,7 +34,7 @@ html, body {
 }
 
 body {
-  font-family: Roboto;
+  font-family: 'Lato', sans-serif;
   font-size: 13px;
   background-color: #F0F0F0;
   padding-top: 80px;
@@ -46,7 +66,7 @@ body {
 }
 
 hr {
-  border-color: #4285F4;
+  border-color: #444;
   opacity: 0.25;
 }
 
@@ -75,33 +95,36 @@ hr {
  | NavBar
  *------------------------------------------- */
 .navbar-default {
-  background: #4285F4 none repeat scroll 0% 0%;
-  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
-  height: 65px;
   position: fixed;
-  z-index: 11;
+  background: #333333 none repeat scroll 0% 0%;
+  top: 0;
+  left: 0;
   width: 100%;
-  left: 0px;
   padding-right: 10px;
   padding-top: 6px;
-  top: 0px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 11;
   transition: all 200ms ease 0s;
   -moz-user-select: none;
   border: none;
   border-radius: 0;
 }
-
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
-  color: #FFF;
+.navbar-default .navbar-header .navbar-brand {
+  color: #ffffff;
 }
-
-.navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav li a, .navbar-default .navbar-nav li a:focus, .navbar-default .navbar-nav li a:visited, .navbar-default .navbar-nav li .open > a, .navbar-default .navbar-nav li .open > a:focus {
   color: #D0D0D0;
-  background-color: transparent;
 }
-
-#user-menu.navbar-nav > li > a {
-  font-size: 24px;
+.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:focus:hover, .navbar-default .navbar-nav li a:visited:hover, .navbar-default .navbar-nav li .open > a:hover, .navbar-default .navbar-nav li .open > a:focus:hover {
+  color: #FFFFFF;
+  background-color: #222;
+}
+.navbar-default .dropdown-menu li a, .navbar-default .dropdown-menu li a:focus, .navbar-default .dropdown-menu li a:visited {
+  color: #222;
+}
+.navbar-default .dropdown-menu li a:hover, .navbar-default .dropdown-menu li a:focus:hover, .navbar-default .dropdown-menu li a:visited:hover {
+  color: #222;
+  background-color: #D0D0D0;
 }
 
 /* -----------------------------------------

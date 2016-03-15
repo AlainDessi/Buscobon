@@ -1,5 +1,6 @@
-# Buscobon PHP FrameWork Version Alpha #
-Buscobon, un petit frameWork que j'utilise dans mes projets personnel. Le developement à debuter l'été 2015, après avoir découvert Laravel. Beaucoup de ses fonctions ainsi que l'organisation de son contenu est largement inspiré de celui-ci et reprends même son moteur de template Blade.
+# Buscobon - My little PHP frameWork #
+Buscobon, est un petit frameWork que j'utilise dans mes projets personnel. Le developement à debuter l'été 2015, après avoir découvert Laravel.
+Beaucoup de noms de ses fonctions ainsi que l'organisation de son contenu est largement inspiré de celui-ci.
 
 Il utilise
  - Bootstrap V3
@@ -9,7 +10,6 @@ Il utilise
  - Grunt
 
 ## Sommaire ##
-
  1. Installation
  2. Configuration
 

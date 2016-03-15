@@ -33,7 +33,7 @@ Routes::post( '/auth/login', 'Auth\AuthController@CheckLogin', 'checklogin' );
 */
 // homepage front
 Routes::get('/', 'Front\HomeController@index', 'homepage');
-Routes::get('/:flag', 'Front\HomeController@index', 'homepage');
+Routes::get('/:flag', 'Front\HomeController@index', 'homepage.lang');
 
 // Exemple pour la gestion des langues
 Routes::get('/:flag/page/:slug', 'Front\HomeController@flagtest', 'flag');
