@@ -49,7 +49,7 @@ class AuthController extends \Core\Http\Controller {
   public function logUser($user)
   {
       // enregistrement Session
-      Auth::setId($user->id)->setEmail($user->email);
+      Auth::setId($user->id)->setEmail($user->email)->setRight($user->rightvalue);
 
       // redirect here
       return redirect('admin.homepage');
