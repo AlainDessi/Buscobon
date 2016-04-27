@@ -1,6 +1,5 @@
 # Buscobon - My little PHP frameWork #
-Buscobon, est un petit frameWork que j'utilise dans mes projets personnel. Le developement à debuter l'été 2015, après avoir découvert Laravel.
-Beaucoup de noms de ses fonctions ainsi que l'organisation de son contenu est largement inspiré de celui-ci.
+Buscobon, est un petit frameWork MVC que j'utilise souvent comme point de démarrage dans quelques projets personnel. Le developement à debuter l'été 2015, après avoir découvert Laravel. Beaucoup de noms de ses fonctions ainsi que l'organisation de son contenu est largement inspiré de celui-ci.
 
 Il utilise
  - Bootstrap V3
@@ -8,6 +7,7 @@ Il utilise
  - Blade
  - Composer
  - Grunt
+ - Adweb
 
 ## Sommaire ##
  1. Installation
@@ -16,10 +16,11 @@ Il utilise
 ## Installation ##
 Télécharcher l'archives correspondant à la dernière version
 
-Executer
+Il faut ensuite mettre à jour les dépendances du framework.
 ```
 $ composer update
 ```
+Pour l'utilisation de grunt
 ```
 $ npm update
 ```
@@ -34,3 +35,6 @@ Executer
 ```
 $ grunt build
 ```
+
+## information ##
+Le système d'authentification pour l'administration est donné à titre d'exemple.

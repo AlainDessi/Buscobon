@@ -20,6 +20,13 @@ return array(
   // mode developement / mode exploitation
   'dev'           =>  true,
 
+  // mode de gestion des sessions
+  // 1: normal
+  // 2: base de données
+  'session_mode'      => 1,
+  'session_tablename' => 'sessions',
+  'session_time'      => 7200,
+
   // Configuration PhpMailer
   'Host'          => 'localhost',
   'SMTPAuth'      => false,

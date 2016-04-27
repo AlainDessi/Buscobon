@@ -8,20 +8,11 @@ use Hash;
 
 class UsersTableSeeder
 {
-
-  /**
-   * run seeder
-   * @return [type] [description]
-   */
-  public static function run()
-  {
-
-    Users::insert([ 'email' => 'alain.dessi@laposte.net',
-                    'password' => Hash::Encrypt('12345'),
-                    'rightvalue' => '999',
-                    'active' => true ]);
-
-  }
-
-
+    public static function run()
+    {
+        Users::insert([ 'email' => 'alain.dessi@laposte.net',
+                        'password' => Hash::Encrypt('12345'),
+                        'rightvalue' => '999',
+                        'active' => true ]);
+    }
 } // end class

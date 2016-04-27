@@ -1,14 +1,13 @@
 <?php
-
 /**
- * Template Login
+ * template de login
  *
- * PHP 5.5.12
- * @author  alain DESSI <alain.dessi@laposte.net>
- * @link    www.alain-dessi.com
- *
+ * @category    view
+ * @package     buscobon
+ * @author    	DESSI Alain <alain.dessi@laposte.net>
+ * @copyright 	2015 Dessi Alain
+ * @link      	http://www.alain-dessi.com
  */
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,26 +18,26 @@
   <link href="/css/admin.theme.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container full-height">
-  <div class="box">
-    <div class="box-content">
-      <div class="login">
-        <h1>login administration</h1>
-        <hr>
-        @if(Session::hasMsg())
-          {!! Session::printMsg() !!}
-        @endif
-        {!! Form::open() !!}
-          {!! Form::text('email','email')->placeholder('votre email') !!}
-          {!! Form::password('password','password')->placeholder('votre mot de passe') !!}
-          {!! Form::check('se rappeler de moi','remember') !!}
+  <div class="container full-height">
+    <div class="box">
+      <div class="box-content">
+        <div class="login">
+          <h1>login administration</h1>
           <hr>
-          {!! Form::submit('se connecter') !!}
-        {!! Form::close() !!}
-        </div>
+          @if(Session::hasMsg())
+            {!! Session::printMsg() !!}
+          @endif
+          {!! Form::open() !!}
+            {!! Form::text('email','email')->placeholder('votre email') !!}
+            {!! Form::password('password','password')->placeholder('votre mot de passe') !!}
+            {!! Form::check('se rappeler de moi','remember') !!}
+            <hr>
+            {{-- non utilisé pour le moment --}}
+            {{-- {!! Form::submit('se connecter') !!} --}}
+          {!! Form::close() !!}
+          </div>
+      </div>
     </div>
   </div>
-</div>
-
 </body>
 </html>

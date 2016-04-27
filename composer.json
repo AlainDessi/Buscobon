@@ -15,6 +15,6 @@
         "phpmailer/phpmailer": "^5.2",
         "philo/laravel-blade": "^3.0",
         "phpunit/phpunit": "^4.8",
-        "alaindessi/adweb": "^0.4"
+        "alaindessi/adweb": "^0.5"
     }
 }

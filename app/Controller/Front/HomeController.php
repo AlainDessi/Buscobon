@@ -4,15 +4,14 @@ namespace App\Controller\Front;
 
 class HomeController extends \Core\Http\Controller
 {
-
     /**
      * Affichage de la HomePage
      */
-  	public function index()
+    public function index()
     {
         $title = "Buscobon - Php Framework by Alain DESSI";
-        return View('front.homepage',compact('title'));
-  	}
+        return View('front.homepage', compact('title'));
+    }
 
     /**
      * Exemple de gestions des langues
@@ -25,5 +24,4 @@ class HomeController extends \Core\Http\Controller
         echo 'Flag: ' . $flag . '<br>';
         echo 'Page : ' . $page;
     }
-
-} // end class
+}
