@@ -30,10 +30,10 @@
           {!! Form::open() !!}
             {!! Form::text('email','email')->placeholder('votre email') !!}
             {!! Form::password('password','password')->placeholder('votre mot de passe') !!}
-            {!! Form::check('se rappeler de moi','remember') !!}
-            <hr>
             {{-- non utilisé pour le moment --}}
-            {{-- {!! Form::submit('se connecter') !!} --}}
+            {{-- {!! Form::check('se rappeler de moi','remember') !!} --}}
+            <hr>
+            {!! Form::submit('se connecter') !!}
           {!! Form::close() !!}
           </div>
       </div>
