@@ -20,6 +20,9 @@ return array(
   // mode developement / mode exploitation
   'dev'           =>  true,
 
+  // render template (twig, blade, php)
+  'render'            => 'blade',
+
   // mode de gestion des sessions
   // 1: normal
   // 2: base de données

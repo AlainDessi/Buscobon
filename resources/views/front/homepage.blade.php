@@ -18,6 +18,7 @@
       <div class="box-content">
         <h1>Buscobon</h1>
         <p>PHP FRAMEWORK By Alain Dessi</p>
+        <p><small>rendu de page avec Laravel/Blade</small></p>
       </div>
     </div>
     <div class="version">Version {{ VERSION }}</div>
