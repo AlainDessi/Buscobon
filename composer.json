@@ -1,7 +1,6 @@
 {
     "name": "adweb/buscobon",
     "description": "A minimalist PHP Framework",
-    "keywords": "framework php",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -11,7 +10,7 @@
         }
     ],
     "autoload": {
-        "psr-4":  { "App\\": "app/", "Core\\": "core/", "Bdd\\":"bdd/", "":"core/Facades/"}
+        "psr-4":  { "App\\": "app/" }
     },
     "require": {
         "php": ">=5.5.0",

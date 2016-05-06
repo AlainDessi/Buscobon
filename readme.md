@@ -16,7 +16,7 @@ Il utilise
 ## Installation ##
 Télécharcher l'archives correspondant à la dernière version, ou utiliser la commande
 ```bash
-$ composer create-project --stability dev  adweb/buscobon bubu
+$ composer create-project --stability dev  adweb/buscobon [DIRECTORY]
 ```
 
 Pour l'utilisation de grunt et de ses plugins
