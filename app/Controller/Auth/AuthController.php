@@ -11,11 +11,25 @@ use Hash;
 class AuthController extends \Core\Http\Controller
 {
     /**
-     * login
+     * affichage du la page de login
      * @return view
      */
     public function getLogin()
     {
+        // affichage twig
+        if (\Core\Config::get('render') === 'twig') {
+            $data['form'] = [
+                'open'      => \Form::open(),
+                'login'     => \Form::text('email', 'email')->placeholder('votre email'),
+                'pswd'      => \Form::password('password', 'password')
+                                ->placeholder('votre mot de passe'),
+                'submit'    => \Form::submit('se connecter'),
+                'close'     => \Form::close()
+            ];
+        } else {
+            $data = [];
+        }
+
         return view('admin.auth.login');
     }
 
