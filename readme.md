@@ -14,13 +14,12 @@ Il utilise
  2. Configuration
 
 ## Installation ##
-Télécharcher l'archives correspondant à la dernière version
+Télécharcher l'archives correspondant à la dernière version, ou utiliser la commande
+```bash
+$ composer create-project --stability dev  adweb/buscobon bubu
+```
 
-Il faut ensuite mettre à jour les dépendances du framework.
-```
-$ composer update
-```
-Pour l'utilisation de grunt
+Pour l'utilisation de grunt et de ses plugins
 ```
 $ npm update
 ```

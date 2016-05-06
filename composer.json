@@ -1,10 +1,13 @@
 {
     "name": "adweb/buscobon",
     "description": "A minimalist PHP Framework",
+    "keywords": "framework php",
+    "type": "project",
+    "license": "MIT",
     "authors": [
         {
             "name": "Alain Dessi",
-            "email": "alain.dessi@laposte.net"
+            "email": "alain.dessi@gmail.com"
         }
     ],
     "autoload": {
