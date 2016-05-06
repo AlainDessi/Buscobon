@@ -55,11 +55,13 @@ class AuthController extends \Core\Http\Controller
         // vérification de l'email
         if (empty($post['email']) || !preg_match('/^[a-z0-9_.@-]+$/', $post['email'])) {
             $this->errorLogin('Votre email n\'est pas valide');
+            exit();
         }
 
         // vérification du mot de passe
         if (empty($post['password']) || !preg_match('/^[a-z0-9A-Z_]+$/', $post['password'])) {
             $this->errorLogin('Votre mot de passe n\'est pas valide');
+            exit();
         }
 
         // Lecture de l'utilisateur
@@ -75,10 +77,12 @@ class AuthController extends \Core\Http\Controller
             } else {
                 // mot de passe incorrect
                 $this->errorLogin();
+                exit();
             }
         } else {
             // email incorrect
             $this->errorLogin();
+            exit();
         }
     }
 
