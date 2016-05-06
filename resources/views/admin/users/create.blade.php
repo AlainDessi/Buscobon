@@ -1,10 +1,14 @@
 <?php
 /**
- * Template user create
+ * création d'un utilisateur
  *
- * @author  alain DESSI <alain.dessi@laposte.net>
- * @link    www.alain-dessi.com
+ * @category   view
+ * @package    buscobon
+ * @author     DESSI Alain <alain.dessi@laposte.net>
+ * @copyright  2016 Dessi Alain
+ * @link       http://www.alain-dessi.com
  */
+
 ?>
 @extends('admin/default')
 
@@ -19,7 +23,6 @@
   </h3>
   {!! Form::open(route('admin.users.store')) !!}
     <div class="row">
-
       <div class="col-md-6">
         {!! Form::text('email', 'email') !!}
         {!! Form::select('Droits applicatif','rightvalue',$rights) !!}
@@ -27,10 +30,7 @@
         {!! Form::submit('Enregistrer') !!}
         {!! Button::btnIco('Annuler', 'cancel', route('admin.users')) !!}
       </div>
-
     </div>
-
   {!! Form::close() !!}
-
 </div>
 @endsection

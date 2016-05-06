@@ -1,14 +1,3 @@
-<?php
-/**
- * template de login
- *
- * @category    view
- * @package     buscobon
- * @author    	DESSI Alain <alain.dessi@laposte.net>
- * @copyright 	2015 Dessi Alain
- * @link      	http://www.alain-dessi.com
- */
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +19,6 @@
           {!! Form::open() !!}
             {!! Form::text('email','email')->placeholder('votre email') !!}
             {!! Form::password('password','password')->placeholder('votre mot de passe') !!}
-            {{-- non utilisé pour le moment --}}
-            {{-- {!! Form::check('se rappeler de moi','remember') !!} --}}
             <hr>
             {!! Form::submit('se connecter') !!}
           {!! Form::close() !!}
